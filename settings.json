@@ -1,0 +1,15 @@
+{
+  "project_panel": {
+    "dock": "right"
+  },
+  "chat_panel": {
+    "dock": "right"
+  },
+  "terminal": {
+    "dock": "bottom"
+  },
+  "theme": "One Light",
+  "ui_font_size": 16,
+  "buffer_font_size": 14,
+  "tab_size": 2
+}
