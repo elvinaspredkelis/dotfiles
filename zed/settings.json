@@ -1,16 +1,89 @@
 {
-  "project_panel": {
-    "dock": "right"
-  },
-  "chat_panel": {
-    "dock": "right"
-  },
   "terminal": {
     "dock": "bottom"
   },
+  "git_panel": {
+    "dock": "right"
+  },
+  "buffer_font_size": 16.0,
+  "icon_theme": "Catppuccin Macchiato",
+  "features": {
+    "inline_completion_provider": "zed"
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2",
+    "provider": {
+      "name": "openai",
+      "default_model": "gpt-4o"
+    }
+  },
+  "show_inline_completions": true,
   "theme": "Catppuccin Macchiato - No Italics",
   "ui_font_family": "Zed Sans",
   "ui_font_size": 16,
-  "buffer_font_size": 14,
-  "tab_size": 2
+  "buffer_line_height": {
+    "custom": 1.7
+  },
+  "buffer_font_features": {
+    "calt": false
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "tab_size": 2,
+  "format_on_save": "on",
+  "lsp": {
+    "solargraph": {
+      "initialization_options": {
+        "diagnostics": false,
+        "formatting": false
+      }
+    },
+    "ruby-lsp": {
+      "initialization_options": {
+        "diagnostics": true,
+        "formatting": false
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "erb": "html",
+          "ruby": "html"
+        },
+        "experimental": {
+          "classRegex": ["\\bclass:\\s*['\"]([^'\"]*)['\"]"]
+        }
+      }
+    }
+  },
+  "languages": {
+    "Ruby": {
+      "language_servers": [
+        "tailwindcss-language-server",
+        "ruby-lsp",
+        "!solargraph"
+      ],
+      "formatter": {
+        "external": {
+          "command": "bundle",
+          "arguments": [
+            "exec",
+            "rubocop",
+            "--server",
+            "--auto-correct-all",
+            "--fail-level",
+            "error",
+            "--stdin",
+            "{buffer_path}",
+            "--stderr"
+          ]
+        }
+      }
+    }
+  }
 }
